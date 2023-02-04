@@ -1,9 +1,9 @@
-# Final-Project-Tableau
+# Final Project with Tableau
 
 ## Project/Goals
-    Tuberculosis is not a disease of the past: although it was discovered in 1988, the whole world did not reach the milestone of 0% tuberculosis patients. Fortunately, it can be cured and prevented. According with the *World Health Organization*, a total of 1.6 million people died from tuberculosis in 2021. Ranked as the 13th leading cause of worldwide death and as the 2nd leading killer infectious after COVID-19 (above HIV/AIDS), tuberculosis (TB) is present in all countries and age groups. One of the *United Nations Sustainable Development Goals (SDGs)* is to put an end in the TB epidemic by the year of 2030. 
-    Tuberculosis (TB) is caused by a bacterium called *Mycobacterium tuberculosis*. This bacteria attacks mostly the lungs, but it can also attack other parts or organs of the body such as the kidney, spine, and brain. It is important to note that not everyone infected with the TB bacteria becomes sick. Due to that, there are two TB-related conditions: (1) latent TB infection (LTBI) and (2) TB disease. If not treated properly, TB disease can be fatal.
-    In this project, you will find the analysis and visualizations experimented from a Tuberculosis dataset given by country. The dataset is a .csv file composed of one physical table called *TB_Burden_Country* and it has 47 fields or columns and 5120 rows in total. Also, this dataset was collected from 1990 until 2014. In addition to that, all those measures were estimaded or approximate numbers as this is part of a geographical dataset, therefore the numbers analysed represent approximate values of TB incidence or mortality rate by year and country.
+   Tuberculosis is not a disease of the past: although it was discovered in 1988, the whole world did not reach the milestone of 0% tuberculosis patients. Fortunately, it can be cured and prevented. According with the *World Health Organization*, a total of 1.6 million people died from tuberculosis in 2021. Ranked as the 13th leading cause of worldwide death and as the 2nd leading killer infectious after COVID-19 (above HIV/AIDS), tuberculosis (TB) is present in all countries and age groups. One of the *United Nations Sustainable Development Goals (SDGs)* is to put an end in the TB epidemic by the year of 2030. 
+   Tuberculosis (TB) is caused by a bacterium called *Mycobacterium tuberculosis*. This bacteria attacks mostly the lungs, but it can also attack other parts or organs of the body such as the kidney, spine, and brain. It is important to note that not everyone infected with the TB bacteria becomes sick. Due to that, there are two TB-related conditions: (1) latent TB infection (LTBI) and (2) TB disease. If not treated properly, TB disease can be fatal.
+   In this project, you will find the analysis and visualizations experimented from a Tuberculosis dataset given by country. The dataset is a .csv file composed of one physical table called *TB_Burden_Country* and it has 47 fields or columns and 5120 rows in total. Also, this dataset shows information per country collected from 1990 until 2014. Although it doens't go more over than that, this dataset represents possibilities of predicition of the variable TB count which can be considered to the next years. In addition to that, all those measures were estimates or approximate numbers as this is part of a geographical dataset, therefore the numbers analyzed represent approximate values of TB incidence or mortality rate by year and country.
 
 ## Process
 The project process, in an overwall way, followed the steps below:
@@ -49,7 +49,16 @@ From those visualizations, some questions poped up, such as:
 
 
 
-### (your step 2)
+### Step 2:
+The first graph used to explore this dataset is titled "TB Detection Rate by Year". On it, you can notice that the TB case detections in all forms (LTBI and TB disease) has a constant rate by year: the graph line is mostly constant and poins out only small variations. The line starts in 1990 and has its first peak in 2003 and, after, in 2011. This graph is divided into 3 parts as it shows the detection rate percent in a whole, the detection rate low bound, the detection rate high bound.
+The second 
+
+
+
+
+
+
+
 
 ## Results
 (Fill in which Option you chose, either 1 or 2. List the dataset you selected for the project if you selected Option 2. Also, discuss the visualizations you created, and why. For Option 2, also identify what your data question was, and how you went through the prompts.)
