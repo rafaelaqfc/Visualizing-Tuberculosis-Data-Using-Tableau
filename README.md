@@ -154,6 +154,8 @@ b) PowerPoint (.pptx) and PDF files of the story "The Impact of Tuberculosis in 
 
 c) A Tableau workbook (.twbx) and PowerPoint (.pptx) files named "The Impact of Tuberculosis in the Globe (1990-2025)" which include all visualizations, worksheets, dashboard, and story in one place.
 
+Note: You can also access those files at the following links: the story presentation is at https://public.tableau.com/views/The_impact_of_TB_in_the_Globe_1990-2025/TheImpactofTuberculosisintheWorldstory?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link and the dashboard is at https://public.tableau.com/app/profile/rafaela.cordeiro/viz/Dashboard_The_impact_of_TB_in_the_Globe_1990-2025/TheImpactofTuberculosisintheWorldDashboard
+
 
 ## References
 ALL Acronyms. https://www.allacronyms.com/
