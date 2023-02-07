@@ -1,49 +1,59 @@
 # Final Project with Tableau
 
 
-## Project Introduction and Goals
+## Introduction and Goals
 Tuberculosis (TB) is not a disease from the past: although it was discovered in 1988, the whole world did not reach the milestone of 0% tuberculosis patients or 0% in the death toll. Fortunately, this context can be changed as tuberculosis can be cured and prevented. According with the *World Health Organization*, a total of 1.6 million people died from tuberculosis in 2021. It is the 13th leading cause of death worldwide, and the 2nd leading killer infectious disease after COVID-19, affecting people of all ages and countries.
 
 TB is indeed a global health issue and it is caused by the bacterium *Mycobacterium tuberculosis* and primarily affects the lungs, but can also impact other parts of the body such as the kidney, spine, uterus, and brain. Not everyone infected with the TB bacteria becomes sick, leading to two conditions: latent TB infection and TB disease. If left untreated, TB disease can be fatal.
 
-In this project, you will read the analyses and visualizations experimented from the tuberculosis dataset, which provides information on TB incidence, cases, and mortality rates by country and year from 1990 to 2013. The dataset is a .csv file containing 47 fields and 5120 rows, and while the information is based on estimates, it provides valuable insights into the future possibilities of TB burden and control efforts.
+In this project, you will read the analyses and visualizations experimented from the tuberculosis dataset, which provides information on TB incidence, cases, and mortality rates by country and year from 1990 to 2013. The dataset is a .csv file containing 47 fields and 5120 rows, and while the information is based on estimates, it provides valuable insights into the future possibilities of TB burden and control efforts. 
+
+Also, this project has the purpose to dive deeper in the (alternative) hypothesis that there is a correlation between the rate of detection of TB with the decline of the number of deaths as this correlation could  shed more light if the methods to derive mortality estimates in the countries are being used to promote the decline of the disease in the world.
 
 
 ## Process
 The project process, in an overwall way, followed the steps below:
 
-
 ### Step 1: Connecting the dataset about tuberculosis count by country with Tableau
-At this step, the dataset, which is a .csv file composed of one physical table called *TB_Burden_Country*, was downloaded and connected as the data source in Tableau Public. This step was followed by EDA which is described in the next step.
+At this step, the dataset, which is a .csv file composed of only one physical table called *TB_Burden_Country*, was downloaded and connected as the data source in *Tableau Public*. This step was followed by EDA which is described in the next step.
 
 
 ### Setp 2: Checking different data types, columns and rows in the data set
-At this step, it was done an initial EDA of the dataset by: 
+This step of the project describes the initial exploratory data analysis (EDA) of the tuberculosis dataset. It outlines some specific actions taken during this EDA, such as:
 
-- Ckecking the datatypes of each column and changing some of them (e.g. "Region" was converted to the geographical role "Country/Region");
+- Checking and updating the data types of each column in the dataset. For example, the data type of the "Region" column was updated to "Country/Region" to reflect its geographical role;
 
-- Updating columns names by removing some expressions on their titles as those expressions were making them very lenght and less readable (e.g. the expression "estimated" was removed as there was no colum with absolute measurements due to the geographic role of the data that we were working with, but only with estimated ones approximate/estimates numbers (decimals or floats data type);
+- Updating the names of columns to make them more concise and readable. This involved removing expressions from the column titles, such as the word "estimated." This change was made because all the columns in the dataset contain only estimated numbers due to the geographical nature of the data, and there are no absolute measurements.
 
-- Understanding the meaning of Null or NaN values under some columns and rows in the dataset (columns such as "Mortality of TB cases who are HIV-positive, per 1000.000 population low bound" and "Mortality of TB cases who are HIV-positive, per 100 000 population, high bound" were full of rows with null values but this is expected to be found in a dataset composed mostly with numbers with a spatial distribution);
+These actions helped me to prepare the data for further analysis and ensure that it is organized and easily understood.
 
-- Grouping the data dimensions into 2 relational hierarchies: (1) "Country/Territory or ISO Classification" grouped the information from country/territory, region, ISO-2 and ISO-3 (both represent classifications of country abreviations) and (2) "Methods to Derive Estimates" which grouped the methods to derive incidence estimates, prevalence estimates, mortality estimates and TBHIV (Tuberculosis with HIV incidence) estimates;
+After that initial EDA, other steps were done to further explore the data in the tuberculosis dataset to gain a better understanding of its contents. The actions taken include:
 
-- Understanding the difference between some classifications presented in the dataset, such as the meaning of "latent TB" x "TB (active) disease", "low-bound" x "high-bound" and "ISO-2 country classification" x "ISO-3 country classification":
+- Understanding the meaning of Null or NaN values in certain columns and rows in the dataset. For example, some columns such as *Mortality of TB cases who are HIV-positive, per 1000.000 population low bound* and *Mortality of TB cases who are HIV-positive, per 100 000 population, high bound* had many rows with null values, which is expected in a dataset composed mostly of numbers with a spatial distribution;
 
-  a) latent-TB is given to a person that has tuberculosis, but doesn't show up symptoms or spread the disease,
-  b) TB disease is given to a person that has the disease, can manifest its symptoms and can spread the disease,
-  c) low-bound and high-bound: these are mathematical values that are used to do estimations of numbers; so whereas a low-bound feature brings out the smallest value that would be rounded up to the estimated value, a high-bound would round up the smallest value that would be rounded up to the next estimated value. This means that the the detection rate, for example, should stay between those 2 in order to be accurate and objective. As in the dataset we have the number of cases per 100,000 people and its stay in the low and hig-bound, we will stick with the general detection estimation numbers;
-  c) ISO-2 and ISO-3 are numerical international codes used to designate every country/territory like an acronomy by using a 2 letter (ISO-2) or 3 letters combination (ISO-3) that designates as especific region or country.
+- Grouping the data dimensions into two relational hierarchies: (1) *Country/Territory or ISO Classification* which groups information from country/territory, region, ISO-2, and ISO-3 (abbreviations for classifying countries), and (2) *Methods to Derive Estimates* which groups the methods used to derive estimates of incidence, prevalence, mortality, and TBHIV (Tuberculosis with HIV incidence);
 
-- Updating some geographical regions/countries wich weren't accepted by Tableau as those existed during the flow of the history but were changed afterwards:
+- Understanding the differences between various classifications presented in the dataset. For example, the difference between *latent TB* and *TB (active) disease*, *low-bound* and *high-bound*, and *ISO-2 country classification* and *ISO-3 country classification* which are described below:
 
-  a) for "Serbia & Montenegro", it was added the latitude of 44.8166634 and longitude of 20.4666648;
-  Footnote: Serbia and Montenegro was a country in Southeast Europe, created from the two remaining republics of Yugoslavia after its breakup in 1991. The republics of  Serbia and Montenegro together established a federation in 1992 as the Federal Republic of Yugoslavia.
+  a) *latent-TB* is given to a person that has tuberculosis, but doesn't show up symptoms or spread the disease,
+  
+  b) *TB (active) disease* is given to a person that has the disease, can manifest its symptoms and can spread the disease,
+  
+  c) *TB (all forms)* include both *latent-TB* and *TB (active) disease*,
+  
+  c) *low-bound* and *high-bound*: these are mathematical values that are used to do estimations of numbers; so whereas a low-bound feature brings out the smallest value that would be rounded up to the estimated value, a high-bound would round up the smallest value that would be rounded up to the next estimated value. This means that the detection rate, for example, should stay between those 2 in order to be accurate and objective. As in the dataset we have the number of cases per 100,000 people and its stay between the low-bound and hig-bound, we will stick with the rate detection estimation numbers,
+  
+  c) *ISO-2* and *ISO-3* are numerical international codes used to designate every country/territory like an acronomy by using a 2 letter (ISO-2) or 3 letters combination (ISO-3) that designates a especific region or country.
 
-  b) for "Netherlands Antilles", it was added the latitude 12.226079 of longitude of -69.060087; 
-  Footnote: The Netherlands Antilles was a constituent country of the Kingdom of the Netherlands. The country consisted of several island territories located in the    Caribbean Sea. The islands were also informally known as the Dutch Antilles. The country came into being in 1954 as the autonomous successor of the Dutch colony of  Curaçao and Dependencies.
+- Updating some geographical regions/countries which were not accepted by Tableau:
 
-  c) for "West Bank and Gaza Strip", it was left like this as those were palestinian territories that I couldn't find the accurate latitude and longitude to update them.
+  a) For Serbia & Montenegro, the latitude 44.8166634 and longitude 20.4666648 were added. It's worth noting saying that Serbia & Montenegro was a country in Southeast Europe formed from the two remaining republics of Yugoslavia after its breakup in 1991. 
+
+  b) For Netherlands Antilles, the latitude 12.226079 and longitude -69.060087 were added. The Netherlands Antilles was a constituent country of the Kingdom of the Netherlands consisting of several island territories located in the Caribbean Sea. Informally known as the Dutch Antilles, the country emerged in 1954 as the autonomous successor of the Dutch colony of Curaçao and Dependencies.
+  
+  c) For West Bank and Gaza Strip, the location was left unchanged as it is a Palestinian territory and accurate latitude and longitude could not be found to update. it.
+
+These actions helped me to gain a deeper understanding of the data, its structure, and the information it contains, which was crucial for conducting meaningful analysis and drawing accurate conclusions.
 
 
 ### Step 3: Exploring the dataset with different visualizations 
@@ -105,9 +115,9 @@ With those questions in mind, this is the moment that the dashboard was created.
 
 
 ## Results
-In order to 
-
 One of the *United Nations Sustainable Development Goals (SDGs)* is to put an end in the TB epidemic by the year of 2030. 
+
+By examining the correlation between the rate of TB detection and the decline in the number of deaths, the project aims to shed light on whether the methods used to estimate mortality in countries are contributing to the global decline of the disease. This objective is relevant and meaningful as it can provide important insights into the effectiveness of TB control and prevention efforts.
 
 (Fill in which Option you chose, either 1 or 2. List the dataset you selected for the project if you selected Option 2. Also, discuss the visualizations you created, and why. For Option 2, also identify what your data question was, and how you went through the prompts.)
 
