@@ -57,45 +57,49 @@ These actions helped me to gain a deeper understanding of the data, its structur
 
 
 ### Step 3: Exploring the dataset with different visualizations
-This step involved exploring the dataset with different visualizations. Ten visualizations are described in this step:
+This step involved exploring the dataset with different visualizations. Twelve visualizations are described in this step:
 
-3.1 A map called "Tuberculosis around the Globe" showing the mortality rate of TB (with and without considering HIV), the detection rate of TB, and the total population of each country.
+3.1 A map called "Tuberculosis around the Globe" show the mortality rate of TB (with and without considering HIV), the detection rate of TB, and the total population of each country.
 
-3.2 A line graph called "TB Detection Average Rate per Year" which displays the average rate of TB detection per year and region/country based on high-bound, low-bound, and general estimates.
+3.2 A line graph called "TB Detection Average Rate per Year" displays the average rate of TB detection per year and region/country based on high-bound, low-bound, and general estimates.
 
-3.3 A line graph called "TB Count per Region and Year" depicting the count of TB cases over time, with one line for each region.
+3.3 A line graph called "TB Count per Region and Year" depicts the count of TB cases over time, with one line for each region.
 
-3.3 A horizontal bar chart called "TB Detection Rate x TB Mortality Rate per Region and Country" broadcasting a comparison between the TB detection rate (including and excluding HIV cases) and TB mortality per country. 
+3.4 A horizontal bar chart called "TB Detection Rate x TB Mortality Rate per Region and Country" compares the TB detection rate (including and excluding HIV cases) and TB mortality per country.
 
-3.4 Another two line graphs called "TB Detection Rate per Year, Region and Country" and "TB Prevalence Rate per Year, Region and Country" showing up the evolution of TB detection rate and TB prevalence rate in different regions and countries (they were made to be visualized one by one in the dashboard afterwards).
+3.5 Two line graphs, "TB Detection Rate per Year, Region and Country" and "TB Prevalence Rate per Year, Region and Country", show the evolution of TB detection rate and TB prevalence rate in different regions and countries, and can be viewed individually in the dashboard.
 
-3.5 A two part area graph called "Number of Deaths of TB per Year, Region and Country" comparing the number of deaths from TB including and excluding HIV per region and country througout the years.
+3.6 A two-part area graph called "Number of Deaths of TB per Year, Region and Country" compares the number of TB deaths including and excluding HIV cases per region and country over the years.
 
-3.6 
+3.7 A line graph named "Incidence of TB Cases Including HIV" shows the incidence rate of TB with consideration of the HIV group as an important variable.
 
-There were two line graphs called "TB Number of Deaths Excluding HIV (Forecast 1)" and "TB Number of Deaths Including HIV (Forecast 2)" were done to perform some forecast of the number of TB deaths by including and excluding HIV. They were both created with a filter by region and its population estimative, considering a 95% of confidence interval and with the addition of 10 years from the last year of the dataset (the forecast was done from 2012 until 2022).
+3.8 A split line graph called "Forecast of Incidence of TB Cases until 2015" compares the incidence rate of TB between two groups, one including and one excluding HIV, since 1990 and forecasted until 2025. The forecast was based on the region and its population estimate, considering a 95% confidence interval and adding 12 years to the last year of the dataset.
 
+3.9 A treemap graph called "TB Mortality Rate, +HIV and Methods to Detect the Mortality Rate" displays the 3 methods used to detect TB mortality, with Indirect being the most commonly used method.
 
+3.10 Another treemap graph named "Methods to Derive Prevalence of TB x TB Prevalence Rate" shows the 5 methods used to detect the prevalence of TB and the TB prevalence rate, with survey imputed being one of the most used methods across countries.
 
-- 3.6 More two graphs called "Methods to Derive Mortality of TB x Mortality Rate of TB" and "Methods to Derive Prevalence of TB x Prevalence Rate of TB". In the first, we can see that the "indirect" method is the most used but still the least effective as it doesn't impact in the decline of the mortality rate of TB. In the second, the method most used to detect the prevalence of TB is survey which can correlate positively with the detection of the prevalence rate of TB.
-
-- 3.6 Another graph called "TB Regression Model (Number of Deaths from TB x TB Detection Rate)" is done to visualize if there is a relationship between the detection rate of tuberculosis with the number of deaths. This model has a high R-square value  euals to 1, so the model explains a lot about the number of deaths from the disease. However, a note about it is important to be mentioned: as this model describes a constant line between the detection rate of TB and number of deaths of TB, this means that althought there is a better rate of detecting the disease nowadays, tuberculosis is still a disease that has been killing lots of people. 
-
+3.11 Additionally, there are two regression model graphs: a linear regression model named "TB Regression Model (Number of Deaths, + HIV x TB Detection Rate" and another one named "TB Linear Regression Model (Number of Deaths, -HIV x TB Detection Rate)". The first model includes the group with HIV and the second excludes it from the model.
 
 
 ### Step 4: Analyzing the features of the dataset to consider the ones with more statistical significance
+In the analysis of the dataset, certain features were found to be more significant for the prediction model than others. These include the country or territory name for understanding the distribution of data and potential patterns between countries, the year to show the evolution of TB detection and mortality over time, and the region to see the count of TB cases per region and year. The region feature was particularly relevant when combined with the year feature. The analysis showed that Europe had the highest count, Africa and America had a similar count that intertwined with each other, and Southeast Asia had the lowest count over the years.
+
 While the dataset has been exploring, some of the 47 different features showed to be more significative than others to our prediction model, such as:
    
-   - Country or territory name: spatial data can help us to understand how our data has been distributed and, therefore, what are some patters between them,
-   - Year: this feature is important as it can point out the evolution of the TB detection and TB mortality by year;
-   - Region: this feature is also relevant especially if combined with the "year" feature: in other words, it is interesting to see the TB count per region and year together. From our line graph, we could see that this is the descending order of TB count per region:
+  
+   
+   - Year: this feature is important as it can point out the evolution of the TB detection and TB mortality per year despicting a trajectory of the disease;
+   
+   - Region: this feature is also relevant especially if combined with the *year* feature. For example, it is relevant to see the TB count per region and year together. From one of our line graphs, it was possible to analyze the count of TB cases per region in descending order:
     
-    - EUR (Europe), 
-    - AFR (Africa), 
-    - AMR (America),
-    - WPR (Western Pacific Region), 
-    - EMR (Eastern Mediterranean Region),
-    - SEA (Southeast Asia)
+    1 EUR (Europe), 
+    2 AFR (Africa), 
+    3 AMR (America),
+    4 WPR (Western Pacific Region), 
+    5 EMR (Eastern Mediterranean Region),
+    6 SEA (Southeast Asia)
+
 *Where Europe has the highest count, Africa and America regions have a similar count as their lines intertwin each other and Southeast Asia has the lowest count throught the years*.
     
     
@@ -130,9 +134,17 @@ These visualizations aim to explore different aspects of the tuberculosis data a
 
 Aggregation of results
 
-
+A treemap graph called "TB Mortality Rate, +HIV and Methods to Detect the Mortality Rate" shows case the 3 methods used to detect the mortality of TB, such as: Indirect, VR and VR Imputed as the first one being most used.
 
 s titled "TB Detection Rate by Year". The first visualization was a graph about the tuberculosis data evolution by year in the world. Similarly, this graph is divided into 3 big rows: the first shows the detection rate percent in a whole, the second, the detection rate low bound, and the third, the detection rate high bound. By analyzing those lines, you can notice that the TB case detections in all forms (LTBI and TB disease) has a constant rate by year: the graph line is mostly high and stable (constant), and points out only small variations. Also, the 3 lines, which start in 1990 and finish in 2012, show their first small peak in 2003 and, after, in 2011. 
+
+
+
+3.10 Another treemap named "Methods to Derive Prevalence of TB x TB Prevalence Rate" shows 5 methods used to detect the prevalence of TB x the TB prevalence rate, such as: NTP, pooled surveys, predicted, survey and survey imputed, whereas the survey imputed appears as one of the most used considering the whole countries. 
+
+3.6 More two graphs called "Methods to Derive Mortality of TB x Mortality Rate of TB" and "Methods to Derive Prevalence of TB x Prevalence Rate of TB". In the first, we can see that the "indirect" method is the most used but still the least effective as it doesn't impact in the decline of the mortality rate of TB. In the second, the method most used to detect the prevalence of TB is survey which can correlate positively with the detection of the prevalence rate of TB.
+
+Important to nothe that both models have a high R-square value , so the model explains a lot about the number of deaths from the disease. However, a note about it is important to be mentioned: as this model describes a constant line between the detection rate of TB and number of deaths of TB, this means that althought there is a better rate of detecting the disease nowadays, tuberculosis is still a disease that has been killing lots of people. 
 
 
 
@@ -143,9 +155,9 @@ The following challenges were encountered during the analysis:
 
 - When trying to match significant map graphs, the legend and filter mismatch caused the need to explore each graph on separate sheets everytime the dashboard was updated;
 
-- The geographical data had missing places which caused the dashboard map, a crucial tool for visualizing the dataset's distribution and spread, to malfunction at times. A temporary solution was to add a fixed map under the dynamic map to prevent blank spaces. A permanent solution will be found in the future.
+- The geographical data had missing places which caused the dashboard map, a crucial tool for visualizing the dataset's distribution and spread, to malfunction at times. A temporary solution was to add a fixed map under the dynamic map to prevent blank spaces. A permanent solution will be found in the future;
 
-- The dataset did not have any information on the correlation between TB mortality rates and immuno-deficient groups of people, making it impossible to answer one of the questions that came up during the exploratory data analysis (EDA) (*Is there a correlation between TB mortality rate with diseases that cause immuno-deficiency?).
+- The dataset did not have any information on the correlation between TB mortality rates and immuno-deficient groups of people, making it impossible to answer one of the questions that came up during the exploratory data analysis (EDA) (*Is there a correlation between TB mortality rate with diseases that cause immuno-deficiency?*).
 
 
 ## Future Goals
