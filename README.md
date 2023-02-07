@@ -1,12 +1,12 @@
 # Final Project with Tableau
 
 
-## Project goals
-Tuberculosis is not a disease of the past: although it was discovered in 1988, the whole world did not reach the milestone of 0% tuberculosis patients. Fortunately, it can be cured and prevented. According with the *World Health Organization*, a total of 1.6 million people died from tuberculosis in 2021. Ranked as the 13th leading cause of worldwide death and as the 2nd leading killer infectious after COVID-19 (above HIV/AIDS), tuberculosis (TB) is present in all countries and age groups. One of the *United Nations Sustainable Development Goals (SDGs)* is to put an end in the TB epidemic by the year of 2030. 
+## Project Introduction and Goals
+Tuberculosis (TB) is not a disease from the past: although it was discovered in 1988, the whole world did not reach the milestone of 0% tuberculosis patients or 0% in the death toll. Fortunately, this context can be changed as tuberculosis can be cured and prevented. According with the *World Health Organization*, a total of 1.6 million people died from tuberculosis in 2021. It is the 13th leading cause of death worldwide, and the 2nd leading killer infectious disease after COVID-19, affecting people of all ages and countries.
 
-Tuberculosis (TB) is caused by a bacterium called *Mycobacterium tuberculosis*. This bacteria attacks mostly the lungs, but it can also attack other parts or organs of the body such as the kidney, spine, uterus, and brain. It is important to note that not everyone infected with the TB bacteria becomes sick. As a result, there are two TB-related conditions: (1) latent TB infection (LTBI) and (2) TB disease. If not treated properly, TB disease can be fatal.
+TB is indeed a global health issue and it is caused by the bacterium *Mycobacterium tuberculosis* and primarily affects the lungs, but can also impact other parts of the body such as the kidney, spine, uterus, and brain. Not everyone infected with the TB bacteria becomes sick, leading to two conditions: latent TB infection and TB disease. If left untreated, TB disease can be fatal.
 
-In this project, you will find the analysis and visualizations experimented from a Tuberculosis dataset given by country. The dataset is a .csv file composed of one physical table called *TB_Burden_Country* and it has 47 fields or columns and 5120 rows in total. Also, this dataset shows information per country collected from 1990 until 2012. Although it doesn't go further than that, this dataset represents possibilities of predictions of the variable TB count per year, type and country which can be considered as part of health measurements of prevention and control in the years that follow. In addition to that, all those measurements were estimates or approximate numbers as this is part of a geographical dataset, therefore it is important to keep in mind that the numbers analyzed represent approximate values of TB incidence, TB cases and mortality rate by year and country.
+In this project, you will read the analyses and visualizations experimented from the tuberculosis dataset, which provides information on TB incidence, cases, and mortality rates by country and year from 1990 to 2013. The dataset is a .csv file containing 47 fields and 5120 rows, and while the information is based on estimates, it provides valuable insights into the future possibilities of TB burden and control efforts.
 
 
 ## Process
@@ -37,17 +37,17 @@ At this step, it was done an initial EDA of the dataset by:
 
 - Updating some geographical regions/countries wich weren't accepted by Tableau as those existed during the flow of the history but were changed afterwards:
 
-a) for "Serbia & Montenegro", it was added the latitude of 44.8166634 and longitude of 20.4666648;
-Footnote: Serbia and Montenegro was a country in Southeast Europe, created from the two remaining republics of Yugoslavia after its breakup in 1991. The republics of Serbia and Montenegro together established a federation in 1992 as the Federal Republic of Yugoslavia.
+  a) for "Serbia & Montenegro", it was added the latitude of 44.8166634 and longitude of 20.4666648;
+  Footnote: Serbia and Montenegro was a country in Southeast Europe, created from the two remaining republics of Yugoslavia after its breakup in 1991. The republics of  Serbia and Montenegro together established a federation in 1992 as the Federal Republic of Yugoslavia.
 
-b) for "Netherlands Antilles", it was added the latitude 12.226079 of longitude of -69.060087; 
-Footnote: The Netherlands Antilles was a constituent country of the Kingdom of the Netherlands. The country consisted of several island territories located in the Caribbean Sea. The islands were also informally known as the Dutch Antilles. The country came into being in 1954 as the autonomous successor of the Dutch colony of Curaçao and Dependencies.
+  b) for "Netherlands Antilles", it was added the latitude 12.226079 of longitude of -69.060087; 
+  Footnote: The Netherlands Antilles was a constituent country of the Kingdom of the Netherlands. The country consisted of several island territories located in the    Caribbean Sea. The islands were also informally known as the Dutch Antilles. The country came into being in 1954 as the autonomous successor of the Dutch colony of  Curaçao and Dependencies.
 
-c) for "West Bank and Gaza Strip", it was left like this as those were palestinian territories that I couldn't find the accurate latitude and longitude to update them.
+  c) for "West Bank and Gaza Strip", it was left like this as those were palestinian territories that I couldn't find the accurate latitude and longitude to update them.
 
 
 ### Step 3: Exploring the dataset with different visualizations 
-During this step, the following 10 visualitions were done:
+During this step, the following visualizations were done:
 
 - 3.1 The first graph used to explore this dataset is titled "TB Detection Rate by Year". The first visualization was a graph about the tuberculosis data evolution by year in the world. Similarly, this graph is divided into 3 big rows: the first shows the detection rate percent in a whole, the second, the detection rate low bound, and the third, the detection rate high bound. By analyzing those lines, you can notice that the TB case detections in all forms (LTBI and TB disease) has a constant rate by year: the graph line is mostly high and stable (constant), and points out only small variations. Also, the 3 lines, which start in 1990 and finish in 2012, show their first small peak in 2003 and, after, in 2011. 
 
@@ -105,6 +105,10 @@ With those questions in mind, this is the moment that the dashboard was created.
 
 
 ## Results
+In order to 
+
+One of the *United Nations Sustainable Development Goals (SDGs)* is to put an end in the TB epidemic by the year of 2030. 
+
 (Fill in which Option you chose, either 1 or 2. List the dataset you selected for the project if you selected Option 2. Also, discuss the visualizations you created, and why. For Option 2, also identify what your data question was, and how you went through the prompts.)
 
 Aggregation of results
@@ -113,8 +117,9 @@ Aggregation of results
 
 ## Challenges 
 Some of the challenges are descibed below:
-- The dataset doesn't describe the information of TB count by age or different groups (e.g., male, female and children). As it only references the count by country and year with some columns bringing out the information by HIV/AIDS relationship, I found that the lacking of people segmentation impacted the analysis as it could give us a better picture of the tuberculosis incidence and mortality rate;
-- To match graphs that were significative together, but as the legend wouldn't mathc both of them, I had to explorey each one in different sheets;
+- The dataset doesn't describe the information of TB count by age or different groups (e.g., male, female and children). As it only references the count by country and year with some columns bringing out the information by HIV/AIDS relationship, I found that the lacking of people segmentation impacted the analysis as it couldn't give us a better picture of the tuberculosis incidence and mortality rate;
+- To match map graphs that were significative together, but as the legend wouldn't match both of them, I had to explory each one in different sheets;
+- As I am working with geographical data, some places are not represented in the map, therefore the map of the dashboard which is one of the most important pieces of information fo visualiza the distribution and spread of the dataset, can stop working sometimes. So as a temporary solution, I added a fixed map under the dynamic map so there will not display a blanck space. In the future, I will find a solution for that. 
 - One of the questions popped up during the EDA was not possible to be addressed as there was no feature in the dataset about if there is a correlation between the TB mortality rates with immuno-defficiency groups of people.
 
 
