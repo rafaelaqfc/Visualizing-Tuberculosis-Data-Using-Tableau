@@ -8,7 +8,7 @@ TB is indeed a global health issue and it is caused by the bacterium *Mycobacter
 
 In this project, you will read the analyses and visualizations experimented from the tuberculosis dataset, which provides information on TB incidence, cases, and mortality rates by country and year from 1990 to 2013. The dataset is a .csv file containing 47 fields and 5120 rows, and while the information is based on estimates, it provides valuable insights into the future possibilities of TB burden and control efforts. 
 
-Also, this project has the purpose to dive deeper in the (alternative) hypothesis that there is a correlation between the rate of detection of TB with the decline of the number of deaths as this correlation could  shed more light if the methods to derive mortality estimates in the countries are being used to promote the decline of the disease in the world.
+Also, this project has the purpose to dive deeper in the hypothesis whether there is a correlation between the rate of detection of TB with the decline of the number of deaths as this correlation could shed more light if the methods to derive mortality estimates in the countries are being used to promote the decline of the disease in the world.
 
 
 ## Process
