@@ -29,7 +29,7 @@ These actions helped me to prepare the data for further analysis and ensure that
 
 After that initial EDA, other steps were done to further explore the data in the tuberculosis dataset to gain a better understanding of its contents. The actions taken include:
 
-- Understanding the meaning of Null or NaN values in certain columns and rows in the dataset. For example, some columns such as *Mortality of TB cases who are HIV-positive, per 1000.000 population low bound* and *Mortality of TB cases who are HIV-positive, per 100 000 population, high bound* had many rows with null values, which is expected in a dataset composed mostly of numbers with a spatial distribution;
+- Analyzing the meaning of Null or NaN values in certain columns and rows in the dataset. For example, some columns such as *Mortality of TB cases who are HIV-positive, per 1000.000 population low bound* and *Mortality of TB cases who are HIV-positive, per 100 000 population, high bound* had many rows with null values, which is expected in a dataset composed mostly of numbers with a spatial distribution;
 
 - Grouping the data dimensions into two relational hierarchies: (1) *Country/Territory or ISO Classification* which groups information from country/territory, region, ISO-2, and ISO-3 (abbreviations for classifying countries), and (2) *Methods to Derive Estimates* which groups the methods used to derive estimates of incidence, prevalence, mortality, and TBHIV (Tuberculosis with HIV incidence);
 
@@ -41,9 +41,9 @@ After that initial EDA, other steps were done to further explore the data in the
   
   c) *TB (all forms)* include both *latent-TB* and *TB (active) disease*,
   
-  c) *low-bound* and *high-bound*: these are mathematical values that are used to do estimations of numbers; so whereas a low-bound feature brings out the smallest value that would be rounded up to the estimated value, a high-bound would round up the smallest value that would be rounded up to the next estimated value. This means that the detection rate, for example, should stay between those 2 in order to be accurate and objective. As in the dataset we have the number of cases per 100,000 people and its stay between the low-bound and hig-bound, we will stick with the rate detection estimation numbers,
+  d) *low-bound* and *high-bound*: these are mathematical values that are used to do estimations of numbers; so whereas a low-bound feature brings out the smallest value that would be rounded up to the estimated value, a high-bound would round up the smallest value that would be rounded up to the next estimated value. This means that the detection rate, for example, should stay between those 2 in order to be accurate and objective. As in the dataset we have the number of cases per 100,000 people and its stay between the low-bound and hig-bound, we will stick with the rate detection estimation numbers,
   
-  c) *ISO-2* and *ISO-3* are numerical international codes used to designate every country/territory like an acronomy by using a 2 letter (ISO-2) or 3 letters combination (ISO-3) that designates a especific region or country.
+  e) *ISO-2* and *ISO-3* are numerical international codes used to designate every country/territory like an acronomy by using a 2 letter (ISO-2) or 3 letters combination (ISO-3) that designates a especific region or country.
 
 - Updating some geographical regions/countries which were not accepted by Tableau:
 
@@ -56,18 +56,26 @@ After that initial EDA, other steps were done to further explore the data in the
 These actions helped me to gain a deeper understanding of the data, its structure, and the information it contains, which was crucial for conducting meaningful analysis and drawing accurate conclusions.
 
 
-### Step 3: Exploring the dataset with different visualizations 
-During this step, the following visualizations were done:
+### Step 3: Exploring the dataset with different visualizations
+This step involved exploring the dataset with different visualizations. Ten visualizations are described in this step:
 
-- 3.1 The first graph used to explore this dataset is titled "TB Detection Rate by Year". The first visualization was a graph about the tuberculosis data evolution by year in the world. Similarly, this graph is divided into 3 big rows: the first shows the detection rate percent in a whole, the second, the detection rate low bound, and the third, the detection rate high bound. By analyzing those lines, you can notice that the TB case detections in all forms (LTBI and TB disease) has a constant rate by year: the graph line is mostly high and stable (constant), and points out only small variations. Also, the 3 lines, which start in 1990 and finish in 2012, show their first small peak in 2003 and, after, in 2011. 
+3.1 A map called "Tuberculosis around the Globe" showing the mortality rate of TB (with and without considering HIV), the detection rate of TB, and the total population of each country.
 
-- 3.2 The second line graph called "TB Count per Region and Year"
+3.2 A line graph called "TB Detection Average Rate per Year" which displays the average rate of TB detection per year and region/country based on high-bound, low-bound, and general estimates.
 
-- 3.3 The third and fourth graphs, titled "TB Detection Rate By Country", "TB Mortality Rate by Country" and "TB Number of Deaths per 1000,000 population" were plotted as maps. 
+3.3 A line graph called "TB Count per Region and Year" depicting the count of TB cases over time, with one line for each region.
 
-- 3.4 There were two line graphs called "TB Number of Deaths Excluding HIV (Forecast 1)" and "TB Number of Deaths Including HIV (Forecast 2)" were done to perform some forecast of the number of TB deaths by including and excluding HIV. They were both created with a filter by region and its population estimative, considering a 95% of confidence interval and with the addition of 10 years from the last year of the dataset (the forecast was done from 2012 until 2022).
+3.3 A horizontal bar chart called "TB Detection Rate x TB Mortality Rate per Region and Country" broadcasting a comparison between the TB detection rate (including and excluding HIV cases) and TB mortality per country. 
 
-- 3.5 A vertical table called "Prevalence of TB" 
+3.4 Another two line graphs called "TB Detection Rate per Year, Region and Country" and "TB Prevalence Rate per Year, Region and Country" showing up the evolution of TB detection rate and TB prevalence rate in different regions and countries (they were made to be visualized one by one in the dashboard afterwards).
+
+3.5 A two part area graph called "Number of Deaths of TB per Year, Region and Country" comparing the number of deaths from TB including and excluding HIV per region and country througout the years.
+
+3.6 
+
+There were two line graphs called "TB Number of Deaths Excluding HIV (Forecast 1)" and "TB Number of Deaths Including HIV (Forecast 2)" were done to perform some forecast of the number of TB deaths by including and excluding HIV. They were both created with a filter by region and its population estimative, considering a 95% of confidence interval and with the addition of 10 years from the last year of the dataset (the forecast was done from 2012 until 2022).
+
+
 
 - 3.6 More two graphs called "Methods to Derive Mortality of TB x Mortality Rate of TB" and "Methods to Derive Prevalence of TB x Prevalence Rate of TB". In the first, we can see that the "indirect" method is the most used but still the least effective as it doesn't impact in the decline of the mortality rate of TB. In the second, the method most used to detect the prevalence of TB is survey which can correlate positively with the detection of the prevalence rate of TB.
 
@@ -100,15 +108,12 @@ While the dataset has been exploring, some of the 47 different features showed t
     - Case detection rate (all forms), percent
 
 
-### Step 5: Retaking the most significative visualizations done in step 3 to analyze some patterns, trends and keypoints of the dataset
+### Step 5: Retaking the most significative visualizations done in step 3 to analyze some patterns, trends and keypoints of the dataset to create the dashboard
 From those visualizations, some questions popped up, such as:
   - *Is there a correlation between TB detection rate and TB number of deaths? In other words, are the countries with a higher TB detection rate the ones with less number of deaths of TB? And are the countries with lower TB detection rate the ones with a higher number of TB deaths?*
   - *Is there a correlation between TB mortality rate and HIV?* 
   - *Is there a correlation between TB mortality and other diseases?*
 
-
-
-### Step 6: Creating the dashboard
 With those questions in mind, this is the moment that the dashboard was created. 
 
 
@@ -117,20 +122,30 @@ With those questions in mind, this is the moment that the dashboard was created.
 ## Results
 One of the *United Nations Sustainable Development Goals (SDGs)* is to put an end in the TB epidemic by the year of 2030. 
 
+
 By examining the correlation between the rate of TB detection and the decline in the number of deaths, the project aims to shed light on whether the methods used to estimate mortality in countries are contributing to the global decline of the disease. This objective is relevant and meaningful as it can provide important insights into the effectiveness of TB control and prevention efforts.
 
-(Fill in which Option you chose, either 1 or 2. List the dataset you selected for the project if you selected Option 2. Also, discuss the visualizations you created, and why. For Option 2, also identify what your data question was, and how you went through the prompts.)
+These visualizations aim to explore different aspects of the tuberculosis data and present them in a clear and concise way. The maps, line graphs, horizontal bar chart and area graphs provide a comprehensive understanding of the rate of detection, mortality, prevalence, and number of deaths due to TB over time, across regions and countries. The use of different visualization types (map, line graphs, bar chart and area graph) helps to highlight specific trends and patterns, making it easier to understand and analyze the data.
+
 
 Aggregation of results
 
 
 
+s titled "TB Detection Rate by Year". The first visualization was a graph about the tuberculosis data evolution by year in the world. Similarly, this graph is divided into 3 big rows: the first shows the detection rate percent in a whole, the second, the detection rate low bound, and the third, the detection rate high bound. By analyzing those lines, you can notice that the TB case detections in all forms (LTBI and TB disease) has a constant rate by year: the graph line is mostly high and stable (constant), and points out only small variations. Also, the 3 lines, which start in 1990 and finish in 2012, show their first small peak in 2003 and, after, in 2011. 
+
+
+
 ## Challenges 
-Some of the challenges are descibed below:
-- The dataset doesn't describe the information of TB count by age or different groups (e.g., male, female and children). As it only references the count by country and year with some columns bringing out the information by HIV/AIDS relationship, I found that the lacking of people segmentation impacted the analysis as it couldn't give us a better picture of the tuberculosis incidence and mortality rate;
-- To match map graphs that were significative together, but as the legend wouldn't match both of them, I had to explory each one in different sheets;
-- As I am working with geographical data, some places are not represented in the map, therefore the map of the dashboard which is one of the most important pieces of information fo visualiza the distribution and spread of the dataset, can stop working sometimes. So as a temporary solution, I added a fixed map under the dynamic map so there will not display a blanck space. In the future, I will find a solution for that. 
-- One of the questions popped up during the EDA was not possible to be addressed as there was no feature in the dataset about if there is a correlation between the TB mortality rates with immuno-defficiency groups of people.
+The following challenges were encountered during the analysis:
+
+- The lack of information on tuberculosis count by age, gender, and children in the dataset limited the analysis of tuberculosis incidence and mortality rate. The only available information was the count by country and year, and the impact of HIV/AIDS on tuberculosis;
+
+- When trying to match significant map graphs, the legend and filter mismatch caused the need to explore each graph on separate sheets everytime the dashboard was updated;
+
+- The geographical data had missing places which caused the dashboard map, a crucial tool for visualizing the dataset's distribution and spread, to malfunction at times. A temporary solution was to add a fixed map under the dynamic map to prevent blank spaces. A permanent solution will be found in the future.
+
+- The dataset did not have any information on the correlation between TB mortality rates and immuno-deficient groups of people, making it impossible to answer one of the questions that came up during the exploratory data analysis (EDA) (*Is there a correlation between TB mortality rate with diseases that cause immuno-deficiency?).
 
 
 ## Future Goals
