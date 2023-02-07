@@ -83,12 +83,12 @@ This step involved exploring the dataset with different visualizations. Twelve v
 
 Note: To assist in reading the visualizations, the following are the legends for the regions:
 
-EUR (Europe)
-AFR (Africa)
-AMR (America)
-WPR (Western Pacific Region)
-EMR (Eastern Mediterranean Region)
-SEA (Southeast Asia)
+- EUR (Europe)
+- AFR (Africa)
+- AMR (America) 
+- WPR (Western Pacific Region)
+- EMR (Eastern Mediterranean Region)
+- SEA (Southeast Asia)
     
 
 ### Step 4: Analyzing the features of the dataset to consider the ones with more statistical significance
@@ -98,56 +98,34 @@ Likewise, to fully understand the relationship between TB detection rate and the
 
 
 ### Step 5: Retaking the most significative visualizations done in step 3 to analyze some patterns, trends and keypoints of the dataset to create the dashboard
-The vizualizations done in step 3 were cleaned up, ordered and structured in a dashboard and, after, in connecting the data to tell its story. As the visualizations followed a specific trajectory of analyzis, all of them were used in a sequential order as they provided us with a clear analytical path. 
+The visualizations created in step 3 were organized and consolidated into a dashboard, which was then used to tell a story with the data. The visualizations were arranged in a specific order to follow the analytical trajectory and answer the main question: "Is there a correlation between the detection rate and number of deaths?" This approach was chosen as the project's goal was not solely to describe African countries - even though it is noted that some of them have higher rates of TB prevalence and mortality rate -, as some projects do, which in my opinion, contributes to further stigmatizing the region instead of providing an analytical view to reduce the TB prevalence and mortality rates there.
 
-Initially grasping the whole picture of the TB aroung the globe and detailing this process throughout the years and different countries by analyzing the average rate of TB every year, following by understanding the TB count rate grouped in 6 regions and then comparing the mortality rate of each country of the rate of detecting TB 
+At first, we gained an overall understanding of TB around the world through the map, and then delved deeper to examine the average TB detection rate over the years and across countries (grouped together). So it was observed that the average detection rate has been relatively stable, reaching a peak in 2003 and then gradually improving over time. For that, the average detection rate was analyzed in comparison with its feature of low-bound and high-bound in order to see if it was accurate to work with the general number estimate.
 
+Next, we analyzed the "TB count per year and region" graph to compare the trends among regions. This graph provided a visual representation of the TB count rate for each region over time. The analysis revealed that Europe has the highest count of TB, followed by Africa, America, Western Pacific Asia, Eastern Mediterranean Region and Southeast Asia.
 
-  - *Is there a correlation between TB detection rate and TB number of deaths? In other words, are the countries with a higher TB detection rate the ones with less number of deaths of TB? And are the countries with lower TB detection rate the ones with a higher number of TB deaths?*
-  - *Is there a correlation between TB mortality rate and HIV?* 
-  - *Is there a correlation between TB mortality and other diseases?*
+Then, the next graph analyzed the relationship between the TB detection rate and mortality rate (including and excluding HIV). The graph revealed that the presence of HIV significantly increases the death toll of TB. Also, some countries in Africa have a higher count of TB due to the relationship with the HIV gvariable (as this disease lower the immune-system, the person is more susceptible to get sick). Similarly, the graph showed that countries with lower detection rates tend to have higher numbers of deaths, such as: Central African Republic, Mozambique, Lesotho and Botswana (in Africa); Cambodia and Lao's People Democratic (in Western Pacific Region), Myanmar, Democratic People's Republic of Korea and Bhutan (in Southeast Asia), Somalia, Pakhistan and Afeghanistan (in Eastern Mediterranean Region), and Haiti (in America). On the other hand, Europe has a high detection rate and low number of deaths, confirming the correlation between the two variables.
 
-With those questions in mind, this is the moment that the dashboard was created. 
+Following that, the other graphs helped us analyze the prevalence of TB cases, number of TB deaths in all forms, incidence of TB cases including and excluding the effect of HIV, and how the prevalence of TB has evolved over time. When visualized together, these graphs aided us in creating regression models to analyze the correlation between the detection rate and number of deaths. Model 1 included the effect of HIV, while Model 2 excluded it. Both models showed a significant p-value (very low) and a low r-squared, indicating a negative correlation between the detection rate and number of deaths (as the detection rate increases, the number of deaths decreases).
 
+The inclusion of the two treemap graphs in the analysis provided additional insight into the detection and estimation of TB mortality and prevalence rates. The use of different methods, such as Indirect and VR Imputed for mortality detection and survey imputed for prevalence estimation, highlights the importance of considering the method used when interpreting the results. Although the relationship between these methods and the detection rate wasn't analyzed due to time constraints, they are important factors to consider in future studies.
 
+The final graph on the forecast, with a 95% confidence level, indicated that the number of deaths is expected to decrease, with a more significant decline in regions such as Africa, Western Pacific Region, and Southeast Region (including HIV).
 
 
 ## Results
+Tuberculosis (TB) remains a widespread issue, with several well-known contributing factors, such as a lack of access to adequate healthcare and treatment in low-income countries and regions, weak immune systems due to comorbidities, lifestyle factors, and age groups. While we were not able to investigate these factors in detail at this project (they weren't part of our dataset so I am retaking them from different studies done in the field), our study emphasized the importance of detecting and preventing TB. Our regression model showed a negative correlation between the increase in detection rate and decrease in the number of TB deaths, with countries in Europe serving as a prime example.
 
-Tuberculosis (TB) is still prevalent today for several reasons. One of the main reasons is the lack of access to proper healthcare and treatment in many parts of the world, especially in low-income countries. Other factors include poverty, poor living conditions, and a weak immune system, among others.
+At this project, the visualizations and the dashboard were useful as they gave us a general overview of the data and, therefore, helped us to spot trends and patterns. These visualizations supported us in exploring different aspects of the tuberculosis data by presenting the information with our question in mind. The maps, line graphs, horizontal bar chart and area graphs gave us a comprehensive understanding of the rate of detection, mortality, prevalence, and number of deaths due to TB over time, across regions and different countries. Also, they helped us to highlight specific trends and patterns, making it easier to understand and analyze the data.
 
-As for the accuracy of the detection methods to derive mortality, it depends on the method used. The WHO recommends the use of the Directly Observed Therapy Short-course (DOTS) strategy, which includes regular monitoring and follow-up of patients to ensure treatment adherence and cure. However, some countries may still rely on less effective methods such as passive case finding, which can result in underdiagnosis and underreporting of cases. Additionally, the accuracy of the methods also depends on the quality of the data collected and the capacity of the healthcare systems to effectively implement the chosen method.
+The key points were highlighted through this process above (steps 4 and 5) and were used to create a story that could help in the decision-making process of the health system network (hospitals, clinics etc.) with the public agenda. So if federal and private institutions increase their policies and measures of prevention TB, this will probably promote the decline in the number of deaths of TB as the most relevant features were taken into account to make this conclusion. 
 
+This project's aim was to examine the correlation between the rate of TB detection and the decline in the number of deaths and it achieved that aim by analyzing several graphs and visualizations. The results showed a negative correlation between the increase in the rate of detection and the decrease in the number of deaths, exemplifying the importance of detecting and preventing measures.
 
+However, the methods used to estimate mortality and prevalence in different countries and their impact on the findings could not be addressed at this moment due to time constraints. Further analysis of the type, frequency, and accuracy of these methods will be crucial to understand the correlation between the quality of the treatment and efforts in reducing the global incidence of TB.
 
-The dashboard structure is useful in this case to have a general overview of the data and it helps the users to spot trends and patterns. The key points were highlighted through this process and were used to create a story that could help in the decision-making process. The correlation between the rate of detection of TB and the decline in the number of deaths of TB was analyzed and the most relevant features were taken into account to make a conclusion. The end goal of this process was to provide insights and support the decision-making process in addressing the TB problem.
+Overall, it is possible to say that this project provides intresting insights into the effectiveness of TB control and prevention efforts as it highlights the importance of continuing to invest in detection as soon as possible to combat TB around the world.
 
-
-One of the *United Nations Sustainable Development Goals (SDGs)* is to put an end in the TB epidemic by the year of 2030. 
-
-
-By examining the correlation between the rate of TB detection and the decline in the number of deaths, the project aims to shed light on whether the methods used to estimate mortality in countries are contributing to the global decline of the disease. This objective is relevant and meaningful as it can provide important insights into the effectiveness of TB control and prevention efforts.
-
-These visualizations aim to explore different aspects of the tuberculosis data and present them in a clear and concise way. The maps, line graphs, horizontal bar chart and area graphs provide a comprehensive understanding of the rate of detection, mortality, prevalence, and number of deaths due to TB over time, across regions and countries. The use of different visualization types (map, line graphs, bar chart and area graph) helps to highlight specific trends and patterns, making it easier to understand and analyze the data.
-
-
-Aggregation of results
-
-A treemap graph called "TB Mortality Rate, +HIV and Methods to Detect the Mortality Rate" shows case the 3 methods used to detect the mortality of TB, such as: Indirect, VR and VR Imputed as the first one being most used.
-
-s titled "TB Detection Rate by Year". The first visualization was a graph about the tuberculosis data evolution by year in the world. Similarly, this graph is divided into 3 big rows: the first shows the detection rate percent in a whole, the second, the detection rate low bound, and the third, the detection rate high bound. By analyzing those lines, you can notice that the TB case detections in all forms (LTBI and TB disease) has a constant rate by year: the graph line is mostly high and stable (constant), and points out only small variations. Also, the 3 lines, which start in 1990 and finish in 2012, show their first small peak in 2003 and, after, in 2011. 
-
-
-
-3.10 Another treemap named "Methods to Derive Prevalence of TB x TB Prevalence Rate" shows 5 methods used to detect the prevalence of TB x the TB prevalence rate, such as: NTP, pooled surveys, predicted, survey and survey imputed, whereas the survey imputed appears as one of the most used considering the whole countries. 
-
-3.6 More two graphs called "Methods to Derive Mortality of TB x Mortality Rate of TB" and "Methods to Derive Prevalence of TB x Prevalence Rate of TB". In the first, we can see that the "indirect" method is the most used but still the least effective as it doesn't impact in the decline of the mortality rate of TB. In the second, the method most used to detect the prevalence of TB is survey which can correlate positively with the detection of the prevalence rate of TB.
-
-Important to nothe that both models have a high R-square value , so the model explains a lot about the number of deaths from the disease. However, a note about it is important to be mentioned: as this model describes a constant line between the detection rate of TB and number of deaths of TB, this means that althought there is a better rate of detecting the disease nowadays, tuberculosis is still a disease that has been killing lots of people. 
-
-Tuberculosis (TB) is still prevalent today for several reasons. One of the main reasons is the lack of access to proper healthcare and treatment in many parts of the world, especially in low-income countries. Other factors include poverty, poor living conditions, and a weak immune system, among others.
-
-As for the accuracy of the detection methods to derive mortality, it depends on the method used. The WHO recommends the use of the Directly Observed Therapy Short-course (DOTS) strategy, which includes regular monitoring and follow-up of patients to ensure treatment adherence and cure. However, some countries may still rely on less effective methods such as passive case finding, which can result in underdiagnosis and underreporting of cases. Additionally, the accuracy of the methods also depends on the quality of the data collected and the capacity of the healthcare systems to effectively implement the chosen method.
 
 ## Challenges 
 The following challenges were encountered during the analysis:
@@ -162,23 +140,23 @@ The following challenges were encountered during the analysis:
 
 
 ## Future Goals
-In the future, I would like to come back to detail the regression model and finish the analysis by trying different variables. Similarly, I would like to use this dataset in combination with other ones provided by the WHO including in the analysis the segmentation of TB by different age groups, gender, disease cormobity and lifestyle as one of possible independent variables. Also, I would like to dive deeper in the methods of TB detection of mortality and of TB prevalence as I assume, from this analyse and dataset, they impact the detection rate and the way that different health systems approach to their patients with TB (in all forms, latent and active).
+In the future, I plan to revisit the regression models from this project and complete the analysis by incorporating different (independent) variables. I also aim to use this dataset in conjunction with others, such as the ones more updated from the *World Health Organization*, to analyze the segmentation of tuberculosis by various factors and features such as age group, gender, comorbidities, and lifestyle, as this dataset couldn't go further than considering the HIV group. Likewise, I am curious about the impact of TB detection methods and prevalence on mortality rates and the way different healthcare systems approach TB patients.
 
-Thus, The future goals you outline are interesting and comprehensive. Adding demographic, lifestyle and health system factors to the analysis of TB would give a more in-depth understanding of why TB is still so prevalent and how the methods of detection affect the rates. Furthermore, exploring different variables in regression models can give insights into how different factors impact the rate of detection and mortality of TB. This could be useful in informing policies and approaches to reducing the prevalence and mortality of TB.
+By adding demographic, lifestyle, and healthcare system factors to the TB analysis, we can gain a deeper understanding of why TB remains widespread and how detection methods impact rates. Further examination of variables in regression models could provide valuable insights into the impact of different factors on TB detection and mortality rates. This information can be used to inform public policies and strategies aimed at reducing TB prevalence and mortality.
 
 
 ## Files Description
-It is here attached the following files of this project:
+Please find attached the following files for this project:
 
-a) A dashboard named "The impact of Tuberculosis in the Globe (1990-2025)" in a .pdf file;
+a) A PDF file of the dashboard "The Impact of Tuberculosis in the Globe (1990-2025)";
 
-b) A story named "The impact of Tuberculosis in the Globe (1990-2025)" in a .pptx and .pdf file;
+b) PowerPoint (.pptx) and PDF files of the story "The Impact of Tuberculosis in the Globe (1990-2025)";
 
-d) A workbook named "The impact of Tuberculosis in the Globe (1990-2025)" in a .twbx and .pptx files which contain all the visualizations, worksheets, dashboard and story together.
+c) A Tableau workbook (.twbx) and PowerPoint (.pptx) files named "The Impact of Tuberculosis in the Globe (1990-2025)" which include all visualizations, worksheets, dashboard, and story in one place.
 
 
 ## References
-ALL ACRONYMS. https://www.allacronyms.com/
+ALL Acronyms. https://www.allacronyms.com/
 
 CDC. https://www.cdc.gov/tb/topic/basics/default.htm
 
