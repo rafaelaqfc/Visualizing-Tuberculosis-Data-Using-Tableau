@@ -142,7 +142,7 @@ The World Health Organization estimates the prevalence and mortality of Tubercul
     - Case detection rate (all forms), percent
 5. In your final project you should show visualizations with:
   - Maps
-  - Date and time
+  - Date and time (Year)
   - Analytical visuals (Forecasting - Clustering)
   - Show Me tables
 6. Try to find an interesting pattern, trend, outlier, etc. from the data used in the above steps.
